@@ -1,11 +1,14 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 import { site } from "@/lib/site";
 
 export default function Footer() {
   return (
     <footer>
       <div className="fcol">
-        <h5>Pixel Pro Multimedia</h5>
+        <Link href="/" className="logo footer-logo" aria-label="Pixel Pro Multimedia home">
+          <Logo variant="footer" />
+        </Link>
         <p>{site.location.office}</p>
         <p>{site.location.street}</p>
         <p>{site.location.label}</p>

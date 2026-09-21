@@ -1,9 +1,15 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 export default function NotFound() {
   return (
     <section className="not-found">
-      <div className="eyebrow">404</div>
+      <Link href="/" className="logo" aria-label="Pixel Pro Multimedia home">
+        <Logo />
+      </Link>
+      <div className="eyebrow" style={{ marginTop: 36 }}>
+        404
+      </div>
       <h1>
         This page is off the <em>grid</em>.
       </h1>

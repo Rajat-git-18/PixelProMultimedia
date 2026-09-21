@@ -25,6 +25,7 @@ export const site = {
   phone: process.env.NEXT_PUBLIC_PHONE || "07404426359",
   phoneTel: process.env.NEXT_PUBLIC_PHONE_TEL || "+917404426359",
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM || "",
+  logo: "/logo.png",
 } as const;
 
 export const seoKeywords = [
@@ -223,6 +224,8 @@ export function jsonLdGraph() {
         url: site.url,
         description: site.description,
         email: site.email,
+        logo: `${site.url}${site.logo}`,
+        image: `${site.url}${site.logo}`,
         ...(site.phone ? { telephone: site.phoneTel } : {}),
         address: {
           "@type": "PostalAddress",

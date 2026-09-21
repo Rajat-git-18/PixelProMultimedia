@@ -1,10 +1,15 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt = "Pixel Pro Multimedia — Design, Video & Generative AI in Karnal";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+export default async function OpenGraphImage() {
+  const logo = await readFile(join(process.cwd(), "public/logo.png"));
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -30,8 +35,14 @@ export default function OpenGraphImage() {
             borderRadius: 420,
             background: "#8A3010",
             opacity: 0.55,
-            filter: "blur(40px)",
           }}
+        />
+        <img
+          src={logoSrc}
+          alt="Pixel Pro Multimedia"
+          width={420}
+          height={149}
+          style={{ marginBottom: 36 }}
         />
         <div
           style={{
@@ -40,30 +51,21 @@ export default function OpenGraphImage() {
             textTransform: "uppercase",
             color: "#FF5A1F",
             fontWeight: 700,
-            marginBottom: 24,
+            marginBottom: 18,
           }}
         >
           Karnal, Haryana
         </div>
         <div
           style={{
-            fontSize: 72,
+            fontSize: 40,
             fontWeight: 700,
-            lineHeight: 1.05,
-            letterSpacing: -2,
-            maxWidth: 980,
+            lineHeight: 1.15,
+            letterSpacing: -1,
+            maxWidth: 900,
           }}
         >
-          PIXEL PRO MULTIMEDIA
-        </div>
-        <div
-          style={{
-            marginTop: 28,
-            fontSize: 32,
-            color: "#8A8A8F",
-          }}
-        >
-          Design · Video · Generative AI
+          Industry-level training in Design, Video & Generative AI.
         </div>
       </div>
     ),

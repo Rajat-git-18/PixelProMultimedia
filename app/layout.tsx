@@ -81,7 +81,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   const jsonLd = jsonLdGraph();
 
   return (
-    <html lang="en-IN" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en-IN" className={`${inter.variable} ${spaceGrotesk.variable}`} data-scroll-behavior="smooth">
       <body>
         <script
           type="application/ld+json"

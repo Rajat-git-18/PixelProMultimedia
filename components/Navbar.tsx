@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Logo from "@/components/Logo";
 import { navLinks } from "@/lib/site";
 
 export default function Navbar() {
@@ -11,8 +12,8 @@ export default function Navbar() {
 
   return (
     <nav>
-      <Link href="/" className="logo" onClick={close}>
-        PIXEL<span>PRO</span> MULTIMEDIA
+      <Link href="/" className="logo" onClick={close} aria-label="Pixel Pro Multimedia home">
+        <Logo priority />
       </Link>
       <ul className={`nav-links${open ? " is-open" : ""}`}>
         {navLinks.map((link) => (
