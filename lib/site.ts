@@ -54,10 +54,175 @@ export const seoKeywords = [
 ];
 
 export const navLinks = [
-  { href: "/courses", label: "Courses" },
-  { href: "/#journey", label: "Learning Path" },
-  { href: "/#modules", label: "Modules" },
-  { href: "/about", label: "About" },
+  { href: "/#overview", label: "Overview" },
+  { href: "/#journey", label: "Path" },
+  { href: "/#curriculum", label: "Curriculum" },
+  { href: "/#learn", label: "Skills" },
+  { href: "/#faq", label: "FAQ" },
+] as const;
+
+export const stats = [
+  { value: "3", label: "Career tracks" },
+  { value: "12", label: "Week learning path" },
+  { value: "6", label: "Core modules" },
+  { value: "1", label: "Karnal centre" },
+] as const;
+
+export const learnSkills = [
+  "Typography",
+  "Color theory",
+  "Branding",
+  "Adobe Photoshop",
+  "Adobe Illustrator",
+  "Adobe Premiere Pro",
+  "Adobe After Effects",
+  "Color grading",
+  "Motion graphics",
+  "Sound design",
+  "Prompt engineering",
+  "AI image tools",
+] as const;
+
+export const features = [
+  {
+    index: "01",
+    title: "Classroom training in Karnal",
+    body: "Learn on-site at the Mugal Canal Road centre — walk-ins welcome, batches you can actually join.",
+  },
+  {
+    index: "02",
+    title: "Hands-on briefs from week one",
+    body: "You start making work immediately. Client-style projects, not a playlist of disconnected tutorials.",
+  },
+  {
+    index: "03",
+    title: "Industry tools, used properly",
+    body: "Photoshop, Illustrator, Canva, Premiere Pro, After Effects, and AI tools inside real workflows.",
+  },
+  {
+    index: "04",
+    title: "Three tracks, one skillset",
+    body: "Graphic design, video editing, and generative AI — pick a direction after the shared foundation.",
+  },
+  {
+    index: "05",
+    title: "Portfolio that reads to employers",
+    body: "Finished work is structured for clients and hiring managers — not a folder of random files.",
+  },
+  {
+    index: "06",
+    title: "Mentor feedback on every brief",
+    body: "Revision cycles like a studio. You learn how notes work, not only how buttons work.",
+  },
+  {
+    index: "07",
+    title: "Industry-readiness support",
+    body: "Interview prep, freelance setup, and guidance toward internships and entry-level roles.",
+  },
+  {
+    index: "08",
+    title: "Beginner-friendly foundation",
+    body: "No prior design degree required. Color, grid, type, and timing come first.",
+  },
+] as const;
+
+export const audience = [
+  {
+    title: "Beginners",
+    body: "Starting from zero and want a structured path into design, video, or AI.",
+  },
+  {
+    title: "Students",
+    body: "After 12th or during college, looking for a job-ready creative skill.",
+  },
+  {
+    title: "Career switchers",
+    body: "Moving into creative work and need a portfolio that holds up in interviews.",
+  },
+  {
+    title: "Freelancers",
+    body: "Already making things, but want tighter craft, faster tools, and better briefs.",
+  },
+] as const;
+
+export const curriculum = [
+  {
+    index: "Module 1",
+    title: "Foundation",
+    meta: "Weeks 1–3",
+    lessons: [
+      "Design fundamentals: color, grid, type, timing",
+      "Software basics across the studio toolkit",
+      "Visual vocabulary shared by every track",
+    ],
+  },
+  {
+    index: "Module 2",
+    title: "Graphic Design track",
+    meta: "Weeks 4–8",
+    lessons: [
+      "Photoshop: retouching, compositing, print and digital",
+      "Illustrator and branding: logos and identity systems",
+      "Canva for fast, client-ready layouts",
+    ],
+  },
+  {
+    index: "Module 3",
+    title: "Video Editing track",
+    meta: "Weeks 4–8",
+    lessons: [
+      "Premiere Pro: narrative cut, pacing, sound sync",
+      "After Effects: motion graphics and kinetic type",
+      "Color grading for social and broadcast",
+    ],
+  },
+  {
+    index: "Module 4",
+    title: "Generative AI track",
+    meta: "Weeks 4–8",
+    lessons: [
+      "Prompt engineering for consistent creative output",
+      "AI image and video tools in a real pipeline",
+      "Speed without dropping craft",
+    ],
+  },
+  {
+    index: "Module 5",
+    title: "Applied briefs & portfolio",
+    meta: "Weeks 9–12",
+    lessons: [
+      "Client-style projects with revision cycles",
+      "Portfolio structure for employers and clients",
+      "Interview prep and industry readiness",
+    ],
+  },
+] as const;
+
+export const enrollPlans = [
+  {
+    name: "Walk-in visit",
+    tag: "Karnal centre",
+    highlight: false,
+    points: [
+      "See a class in person",
+      "Ask about batch timings",
+      "Beside SCO. 154, Mugal Canal Road",
+    ],
+    cta: "Get directions",
+    href: site.location.mapsUrl,
+  },
+  {
+    name: "Enquire now",
+    tag: "Recommended",
+    highlight: true,
+    points: [
+      "Share your course interest",
+      "Get a callback on batch seats",
+      "Call 07404426359 anytime",
+    ],
+    cta: "Send enquiry",
+    href: "/contact",
+  },
 ] as const;
 
 export const pillars = [
@@ -188,6 +353,18 @@ export const faqs = [
   {
     q: "Do I need prior design experience?",
     a: "No. Foundation weeks cover the visual vocabulary — color, grid, type, and timing — before you specialise in graphic design, video, or generative AI.",
+  },
+  {
+    q: "What software do you teach?",
+    a: "Graphic design on Photoshop, Illustrator, and Canva. Video on Premiere Pro and After Effects. Generative AI covers prompt engineering and AI image tools inside those same pipelines.",
+  },
+  {
+    q: "Is there a certificate after the course?",
+    a: "Yes. After you complete the programme you receive a course-completion certificate from Pixel Pro Multimedia.",
+  },
+  {
+    q: "Do I need a powerful laptop?",
+    a: "A regular laptop that can run Adobe apps is enough to start. Ask us at the centre if you want a simple spec checklist before you buy anything.",
   },
 ] as const;
 

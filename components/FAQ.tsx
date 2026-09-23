@@ -8,8 +8,8 @@ export default function FAQ() {
 
   return (
     <section id="faq">
-      <span className="label">FAQ</span>
-      <h2 className="title">Answers before you walk in.</h2>
+      <span className="label">FAQs</span>
+      <h2 className="title">Questions before you walk in.</h2>
       <div className="faq-list">
         {faqs.map((item, index) => {
           const isOpen = open === index;

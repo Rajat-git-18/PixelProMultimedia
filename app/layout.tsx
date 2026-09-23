@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyBar from "@/components/StickyBar";
 import { jsonLdGraph, seoKeywords, site } from "@/lib/site";
 import "./globals.css";
 
@@ -93,6 +94,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navbar />
         <main id="main">{children}</main>
         <Footer />
+        <StickyBar />
       </body>
     </html>
   );

@@ -3,23 +3,22 @@ import { site } from "@/lib/site";
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero hero-landing">
       <div className="eyebrow">{site.location.label}</div>
       <h1>
-        Industry-level training in <em>Design</em>, <em>Video</em> &amp;{" "}
-        <em>Generative AI</em>.
+        Design, video &amp; AI — from basics to <em>job-ready</em>.
       </h1>
       <p className="sub">
-        Pixel Pro Multimedia builds job-ready creative skill through structured,
-        project-based learning — not just software tutorials.
+        Structured, project-based training at Pixel Pro Multimedia, Karnal.
+        Build a career skill — not just a software playlist.
       </p>
       <div className="hero-actions">
-        <Link href="/courses" className="btn-primary">
-          Explore Courses
+        <Link href="/contact" className="btn-primary">
+          Join now
         </Link>
-        <Link href="#journey" className="btn-ghost">
-          See Learning Path
-        </Link>
+        <a href={`tel:${site.phoneTel}`} className="btn-ghost">
+          Call {site.phone}
+        </a>
       </div>
       <div className="location-tag">
         {site.location.street}, {site.location.city} — {site.location.walkins}

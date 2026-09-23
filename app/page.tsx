@@ -1,7 +1,12 @@
 import Hero from "@/components/Hero";
-import Pillars from "@/components/Pillars";
+import Stats from "@/components/Stats";
+import CourseIntro from "@/components/CourseIntro";
 import LearningPath from "@/components/LearningPath";
-import ModuleCards from "@/components/ModuleCards";
+import Curriculum from "@/components/Curriculum";
+import LearnGrid from "@/components/LearnGrid";
+import Features from "@/components/Features";
+import WhoFor from "@/components/WhoFor";
+import Enrollment from "@/components/Enrollment";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 
@@ -9,9 +14,14 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Pillars />
+      <Stats />
+      <CourseIntro />
       <LearningPath />
-      <ModuleCards />
+      <Curriculum />
+      <LearnGrid />
+      <Features />
+      <WhoFor />
+      <Enrollment />
       <FAQ />
       <CTA />
     </>

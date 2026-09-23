@@ -18,21 +18,21 @@ export default function LearningPath() {
     const updateFlow = () => {
       const rect = wrap.getBoundingClientRect();
       const vh = window.innerHeight;
-      const total = rect.height;
+      const total = Math.max(rect.height, 1);
       path.style.strokeDasharray = String(total);
       svg.setAttribute("viewBox", `0 0 2 ${total}`);
       path.setAttribute("d", `M1,0 L1,${total}`);
-      const progress = Math.max(0, Math.min(1, (vh * 0.75 - rect.top) / total));
+      const progress = Math.max(0, Math.min(1, (vh * 0.7 - rect.top) / total));
       path.style.strokeDashoffset = String(total * (1 - progress));
     };
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("active");
+          if (entry.isIntersecting) entry.target.classList.add("is-active");
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0.35 }
     );
 
     stepRefs.current.forEach((step) => {
@@ -52,11 +52,15 @@ export default function LearningPath() {
 
   return (
     <section id="journey">
-      <span className="label">Learning Path</span>
-      <h2 className="title">How training actually progresses — stage by stage.</h2>
-      <div className="flow-wrap" ref={wrapRef}>
+      <span className="label">Learning path</span>
+      <h2 className="title center-title">How training moves, stage by stage.</h2>
+      <p className="intro-copy">
+        Follow the line. Material sits left, then right, as the 12 weeks
+        progress.
+      </p>
+      <div className="timeline" ref={wrapRef}>
         <svg
-          className="flow-line-svg"
+          className="timeline-line"
           ref={svgRef}
           viewBox="0 0 2 800"
           preserveAspectRatio="none"
@@ -64,20 +68,28 @@ export default function LearningPath() {
         >
           <path ref={pathRef} d="M1,0 L1,800" />
         </svg>
-        {journey.map((step, index) => (
-          <div
-            className="flow-step"
-            key={step.node}
-            ref={(el) => {
-              stepRefs.current[index] = el;
-            }}
-          >
-            <div className="flow-node">{step.node}</div>
-            <h3>{step.title}</h3>
-            <p>{step.body}</p>
-            <span className="flow-tag">{step.tag}</span>
-          </div>
-        ))}
+        {journey.map((step, index) => {
+          const side = index % 2 === 0 ? "left" : "right";
+          return (
+            <div
+              className={`timeline-row timeline-${side}`}
+              key={step.node}
+              ref={(el) => {
+                stepRefs.current[index] = el;
+              }}
+            >
+              <div className="timeline-card">
+                <span className="flow-tag">{step.tag}</span>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+              <div className="timeline-node" aria-hidden="true">
+                {step.node}
+              </div>
+              <div className="timeline-spacer" aria-hidden="true" />
+            </div>
+          );
+        })}
       </div>
     </section>
   );

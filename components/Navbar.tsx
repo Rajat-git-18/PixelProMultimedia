@@ -25,12 +25,12 @@ export default function Navbar() {
         ))}
         <li>
           <Link href="/contact" className="nav-cta" onClick={close}>
-            Enquire
+            Join now
           </Link>
         </li>
       </ul>
       <Link href="/contact" className="nav-cta desktop-only">
-        Enquire
+        Join now
       </Link>
       <button
         className={`nav-toggle${open ? " is-open" : ""}`}

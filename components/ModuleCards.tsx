@@ -7,9 +7,11 @@ export default function ModuleCards() {
   const [flipped, setFlipped] = useState<number | null>(null);
 
   return (
-    <section id="modules">
-      <span className="label">Module Library</span>
-      <h2 className="title">Hover a card. See what&apos;s actually inside.</h2>
+    <div id="modules" className="module-library">
+      <span className="label">Inside the tools</span>
+      <h3 className="title center-title module-title">
+        Hover a card. See what&apos;s actually inside.
+      </h3>
       <div className="cards-grid">
         {modules.map((mod, index) => (
           <div
@@ -36,6 +38,6 @@ export default function ModuleCards() {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

@@ -23,8 +23,9 @@ export default function Footer() {
       <div className="fcol">
         <h5>Explore</h5>
         <Link href="/about">About</Link>
-        <Link href="/#journey">Learning Path</Link>
-        <Link href="/contact">Enquire</Link>
+        <Link href="/#journey">Learning path</Link>
+        <Link href="/#curriculum">Curriculum</Link>
+        <Link href="/contact">Join now</Link>
       </div>
       <div className="fcol">
         <h5>Contact</h5>
